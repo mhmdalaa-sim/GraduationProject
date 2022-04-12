@@ -21,6 +21,7 @@ function TableTemp({item}) {
       <td class="p-2 col px-1"></td>
       <td class="p-2 col px-1">{item.Value}</td>
       <td class="p-2 col px-1"></td>
+      
     </tr>
 
     </>

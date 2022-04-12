@@ -13,8 +13,13 @@ function UsersList() {
         backgroundColor:"#448AE5",
         color:"white",
         borderRadius: "10px",
+        borderStyle:"solid",
+        borderColor: "#15509D",
         marginTop:"3%",
-        padding:"1%"
+        padding:"1%",
+        fontFamily: 'Lalezar',
+    fontSize:"2rem",
+    
         
 
     }
@@ -35,7 +40,9 @@ function UsersList() {
       <Col >
     
       
-      <Link to={`/UpdateUser`}><Button style={{float:'left',backgroundColor:"whitesmoke",color:'white'
+      <Link to={`/UpdateUser`}><Button style={{float:'left',color:'white', borderRadius: "10px",
+        borderStyle:"solid",
+        borderColor: "#15509D"
         }}>تعديل </Button></Link>
         
         </Col>

@@ -8,12 +8,19 @@ import logo4 from './refresh-page-option.png'
 import{Link} from "react-router-dom"
 function AdminNavBar() {
 
-    const navbar = {backgroundColor: '#006CF9'};
+    const navbar = {backgroundColor: '#448AE5',
+
+    fontFamily: 'Lalezar',
+    fontSize:"1.5rem"
+
+
+  };
     const navstyle={
-    color:"white"
+    color:"white",
+    
                     }   
 
-                    const dropnavbar = {backgroundColor: '#006CF9',
+                    const dropnavbar = {backgroundColor: '#448AE5',
                     paddingTop:"3%",
                     color:"white"
                     

@@ -2,13 +2,13 @@ import React from 'react'
 import {Form,FormControl,FormGroup,FormLabel,Row,Col,Button} from 'react-bootstrap'
 export default function Report() {
     const style={
-        backgroundColor: "lightblue",
+    
         padding:"10px",
         
     }
 
     const lablestyle={
-        backgroundColor: "lightblue",
+       
         padding:"10px",
         float:"right"
         

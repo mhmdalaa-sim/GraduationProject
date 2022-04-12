@@ -6,17 +6,20 @@ function NewWarehouse() {
 
     const inputstyle={
         marginTop:"5%",
-      
+        fontFamily: 'Lalezar',
+        fontSize:"2rem"
     }
 
     const lableStyle={
         marginTop:"3.5%",
-      
+        fontFamily: 'Lalezar',
+        fontSize:"2rem"
     }
   return (
 <>
 
-<h1 style={{textAlign:"center",marginTop:"5%"}}>مخزن جديد</h1>
+<h1 style={{textAlign:"center",marginTop:"5%",fontFamily: 'Lalezar',
+    fontSize:"4rem"}}>مخزن جديد</h1>
 
 <Container fluid style={{padding:"5%"}}>
 
@@ -76,14 +79,16 @@ function NewWarehouse() {
     <Row style={{justifyContent:"centre",width:"100%",}}>
     <Col ></Col>
     <Col style={{textAllign:"centre"}}> <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1" style={{textAlign:"center"}} >
-      <Form.Label ><h3   style={{textAlign:"center",marginTop:"5%"}}>الوصف</h3></Form.Label>
+      <Form.Label ><h3   style={{textAlign:"center",marginTop:"5%",fontFamily: 'Lalezar',
+    fontSize:"2rem"}}>الوصف</h3></Form.Label>
       <Form.Control as="textarea" rows={3} />
     </Form.Group></Col>
     <Col > </Col>
    
     </Row>
 
-<Button type='submit' style={{marginTop:"5%",marginLeft:"5%"}}  size="lg">اضافه</Button>
+<Button type='submit' style={{marginTop:"5%",marginLeft:"5%",fontFamily: 'Lalezar',
+    fontSize:"2rem"}}  size="lg">اضافه</Button>
     </Form>
 </Container>
 </>

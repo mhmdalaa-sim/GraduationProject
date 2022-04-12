@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom"
 import AdminNavBar from './AdminNavBar'
 import ItemRow from '../../components/ItemRow'
 import { Container,Row,Col,Button,Form,FormLabel,FormControl } from 'react-bootstrap'
+import SearchPage from '../../components/SearchPage'
 function WHItems({aylist}) {
     const prams = useParams()
     const rowstyle={
@@ -13,6 +14,15 @@ function WHItems({aylist}) {
 <>
 <AdminNavBar></AdminNavBar>
 <h1 style={{textAlign:"center", paddingTop:"5%"}}>{prams.id} اصناف المخزن رقم   </h1>
+
+
+
+<Container> 
+        <Row>
+        <Col style={{float:"right", marginTop:"6%"}}><SearchPage ></SearchPage></Col>
+        </Row>
+        </Container>
+
 
 {aylist.map((item)=>{
 

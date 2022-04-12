@@ -5,7 +5,7 @@ import logo2 from './contact-form.svg'
 import refund from './refund.svg'
 import{Link} from "react-router-dom"
 
-const navbar = {backgroundColor: '#006CF9'};
+const navbar = {backgroundColor: '#448AE5'};
 const navstyle={
 color:"white"
 }

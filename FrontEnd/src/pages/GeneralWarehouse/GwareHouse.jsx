@@ -1,9 +1,7 @@
 import React from 'react'
 import { Container,Row,Col,Button } from 'react-bootstrap'
 import{Link} from "react-router-dom"
-
-function WareHouse({item}) {
-
+function GwareHouse({item}) {
     const style={
         backgroundColor:"#448AE5",
         color:"white",
@@ -20,8 +18,7 @@ function WareHouse({item}) {
   return (
     <>
 
-
-    <Container style={style}>
+<Container style={style}>
       <Row className="justify-content-end">
         <Col sm m lg="auto">
           <h5> مخزن رقم : {item.id}</h5>
@@ -32,7 +29,7 @@ function WareHouse({item}) {
       <Col sm m lg="9">
     
       
-      <Link to={`/WareHouses/${item.id}`}><Button type="submit" style={{float:'left',color:'white', borderRadius: "10px",
+      <Link to={`/GeneralWareHouses/${item.id}`}><Button type="submit" style={{float:'left',color:'white', borderRadius: "10px",
         borderStyle:"solid",
         borderColor: "#15509D",backgroundColor:"red"
         }}>اظهار التفاصيل</Button></Link>
@@ -50,14 +47,6 @@ function WareHouse({item}) {
         </Row>
         
 
-
-
-
-
-
-
-
-       
         <Row className="justify-content-end">
         <Col sm m lg="auto">
           <h5>{item.date}:التاريخ</h5>
@@ -71,8 +60,9 @@ function WareHouse({item}) {
     </Container>
 
   
-        </>
+
+    </>
   )
 }
 
-export default WareHouse
+export default GwareHouse

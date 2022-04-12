@@ -6,12 +6,14 @@ function NewUser() {
 
     const inputstyle={
         marginTop:"5%",
-        marginLeft:"5%"
-      
+        marginLeft:"5%",
+        fontFamily: 'Lalezar',
+        fontSize:"2rem"
     }
   return (<>
  
-  <h1 style={{textAlign:"center",marginTop:"2%"}}>مستخدم جديد</h1>
+  <h1 style={{textAlign:"center",marginTop:"2%", fontFamily: 'Lalezar',
+    fontSize:"4rem"}}>مستخدم جديد</h1>
   <Container style={{justifyContent:"centre",width:"100%",}}>
 <Form>
   <Row >
@@ -80,7 +82,8 @@ function NewUser() {
     
     
 
-<Button type='submit' style={{backgroundColor:"#134D9A"}} size="lg">تاكيد</Button>
+<Button type='submit' style={{backgroundColor:"#134D9A",fontFamily: 'Lalezar',
+    fontSize:"1rem"}} size="lg">تاكيد</Button>
     
   </Row>
 

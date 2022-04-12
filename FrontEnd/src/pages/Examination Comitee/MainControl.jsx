@@ -10,6 +10,7 @@ function MainControl() {
     <h1>MainControl</h1>
     <Link to="/ExamineMain"><Button>ExaminationComitee</Button></Link>
     <Link to="/Admin"><Button>Admin</Button></Link>
+    <Link to="/GeneralWarehouse"><Button>GeneralWarehouse</Button></Link>
 
     
 

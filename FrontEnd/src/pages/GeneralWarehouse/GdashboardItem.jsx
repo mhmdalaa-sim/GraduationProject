@@ -1,20 +1,18 @@
 import React from 'react'
 import { Container,Row,Col,Button } from 'react-bootstrap'
 import{Link} from "react-router-dom"
-
-function WareHouse({item}) {
-
+function GdashboardItem({item}) {
     const style={
         backgroundColor:"#448AE5",
         color:"white",
         borderRadius: "10px",
-        borderStyle:"solid",
-        borderColor: "#15509D",
-        marginTop:"3%",
+        marginTop:"5%",
         padding:"1%",
         fontFamily: 'Lalezar',
-        fontSize:"1.5rem"
-        
+        fontSize:"2rem",
+        borderRadius: "10px",
+        borderStyle:"solid",
+        borderColor: "#15509D"
 
     }
   return (
@@ -24,7 +22,7 @@ function WareHouse({item}) {
     <Container style={style}>
       <Row className="justify-content-end">
         <Col sm m lg="auto">
-          <h5> مخزن رقم : {item.id}</h5>
+          <h5>{item.id}طلب لاسترداد رقم</h5>
         </Col>
         
       </Row>
@@ -32,31 +30,15 @@ function WareHouse({item}) {
       <Col sm m lg="9">
     
       
-      <Link to={`/WareHouses/${item.id}`}><Button type="submit" style={{float:'left',color:'white', borderRadius: "10px",
+      <Link to={`/RefundTable/${item.id}`}><Button type="submit" style={{float:'left',backgroundColor:"whitesmoke", borderRadius: "10px",
         borderStyle:"solid",
-        borderColor: "#15509D",backgroundColor:"red"
-        }}>اظهار التفاصيل</Button></Link>
+        borderColor: "#15509D"
+        }}>اظهار تفاصيل الطلب</Button></Link>
         
         </Col>
         <Col sm m lg="auto" style={{float:'right'}}>
-          <h5 >مخزن تابع لقسم  : {item.Dep}</h5>
+          <h5 >{item.owner}:اسم رئيس لجنه الفحص</h5>
         </Col>
-
-        <Row className="justify-content-end">
-
-        <Col sm m lg="auto">
-          <h5> رئيس المخزن : {item.Mang} </h5>
-        </Col>
-        </Row>
-        
-
-
-
-
-
-
-
-
        
         <Row className="justify-content-end">
         <Col sm m lg="auto">
@@ -69,10 +51,9 @@ function WareHouse({item}) {
     
       
     </Container>
-
-  
         </>
+    
   )
 }
 
-export default WareHouse
+export default GdashboardItem

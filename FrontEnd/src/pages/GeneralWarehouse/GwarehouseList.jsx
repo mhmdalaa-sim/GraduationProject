@@ -1,16 +1,17 @@
 import React from 'react'
-import WareHouse from '../../components/WareHouse'
-import AdminNavBar from './AdminNavBar'
+import GeneralNav from './GeneralNav'
 import{Link} from "react-router-dom"
 import { Container,Row,Col,Button,FormGroup,FormLabel,FormControl } from 'react-bootstrap'
 import SearchPage from '../../components/SearchPage'
-
-function WareHousesDashboard({WH}) {
-
+import GwareHouse from './GwareHouse'
+function GwarehouseList({WH}) {
   return (<>
-       <AdminNavBar></AdminNavBar>
-
-       <h1 style={{textAlign:"center",marginTop:"5%",   fontFamily: 'Lalezar',
+    <GeneralNav></GeneralNav>
+   
+   
+   
+   
+    <h1 style={{textAlign:"center",marginTop:"5%",   fontFamily: 'Lalezar',
     fontSize:"4rem"}}>المخازن المتاحه</h1>
 
        <Container> 
@@ -22,13 +23,11 @@ function WareHousesDashboard({WH}) {
        {WH.map((item)=>{
 
 
-        return <WareHouse key={item.id} item={item}></WareHouse>
+        return <GwareHouse key={item.id} item={item}></GwareHouse>
        })}
-
-       
-  </>
-  
+   </>
+   
   )
 }
 
-export default WareHousesDashboard
+export default GwarehouseList

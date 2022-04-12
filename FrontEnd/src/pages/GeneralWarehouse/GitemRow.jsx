@@ -1,8 +1,7 @@
 import React from 'react'
 import { Container,Row,Col,Button,FormGroup,FormLabel,FormControl } from 'react-bootstrap'
 import{Link} from "react-router-dom"
-function ItemRow({item}) {
-
+function GitemRow({item}) {
     const style={
         backgroundColor:"white",
         color:"black",
@@ -15,24 +14,22 @@ function ItemRow({item}) {
   
     }
 
-
     const rowstyle={
-      fontFamily: 'Lalezar',
-    fontSize:"1.5rem"
-    }
+        fontFamily: 'Lalezar',
+      fontSize:"1.5rem"
+      }
+
   return (
     <Container style={style}>
     <Row className="justify-content-end">
     
     <Col >
     
-    
-    <Link to={`/ExamineMain/item/${item.id}/${item.Name}`}><Button type="submit" style={{float:'left',backgroundColor:"#448AE5",color:'white',fontFamily: 'Lalezar',
+    <Link to={`/Generalitem/${item.id}/${item.Name}`}><Button type="submit" style={{float:'left',backgroundColor:"#448AE5",color:'white',fontFamily: 'Lalezar',
     fontSize:"1.5rem", borderRadius: "10px",
         borderStyle:"solid",
         borderColor: "#15509D",
-    }}>تعديل</Button></Link>
-    
+    }}>اظهار</Button></Link>
     </Col>
     
     <Col sm m lg="auto">
@@ -59,4 +56,4 @@ function ItemRow({item}) {
   )
 }
 
-export default ItemRow
+export default GitemRow

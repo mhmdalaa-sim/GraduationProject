@@ -16,6 +16,8 @@ function RefundTable({tdata}) {
         float:"centre",
         width:"80%",
         margin:"5%",
+        fontFamily: 'Lalezar',
+    fontSize:"3rem"
 
     }
 
@@ -24,17 +26,19 @@ function RefundTable({tdata}) {
         color:"black",
         borderRadius: "10px",
         marginTop:"5%",
-        padding:"1%"
+        padding:"1%",
         
-
+        fontFamily: 'Lalezar',
+        fontSize:"3rem"
     }
   return (
    <>
 
-    <NavBar></NavBar>
+   
 
     
-        <h1 style={{textAlign:"center"}}>{prams.id} طلب ارتجاع رقم  </h1>
+        <h1 style={{textAlign:"center",fontFamily: 'Lalezar',
+        fontSize:"4rem",paddingTop:"5%"}}>{prams.id} طلب ارتجاع رقم  </h1>
 
         <Container style={style}>
   <Row className="justify-content-end">
@@ -90,6 +94,21 @@ return <TableTemp Key={item.id} item={item}></TableTemp>
   </tbody>
  
 </Table>
+
+
+<Button type="submit" style={{
+    marginLeft:"10%",fontFamily: 'Lalezar',
+        fontSize:"2rem"
+}}>تاكيد</Button>
+
+<Container style={{ fontFamily: 'Lalezar',
+    fontSize:"3rem"}}>
+  <Row>
+    <Col>
+    
+    </Col>
+  </Row>
+</Container>
 
    </>
   )

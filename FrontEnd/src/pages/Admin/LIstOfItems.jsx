@@ -9,7 +9,8 @@ function LIstOfItems({aylist}) {
     <>
         <AdminNavBar></AdminNavBar>
 
-        <h1 style={{textAlign:"center" ,marginTop:"3%"}}>الاصناف الموجوده</h1>
+        <h1 style={{textAlign:"center" ,marginTop:"3%", fontFamily: 'Lalezar',
+    fontSize:"4rem"}}>الاصناف الموجوده</h1>
         <Container> 
         <Row>
         <Col style={{float:"right", marginTop:"6%"}}><SearchPage ></SearchPage></Col>
@@ -24,7 +25,10 @@ function LIstOfItems({aylist}) {
             return <ItemRow key={item.id} item={item}></ItemRow>
         })}
 
-        <Link to="/Admin/NewItem"><Button style={{marginTop:"5%",marginLeft:"10%"}}>اضافه صنف جديد</Button></Link>
+        <Link to="/Admin/NewItem"><Button style={{marginTop:"5%",marginLeft:"10%",   fontFamily: 'Lalezar',
+    fontSize:"1.5rem", borderRadius: "10px",
+        borderStyle:"solid",
+        borderColor: "#15509D",}}>اضافه صنف جديد</Button></Link>
     </>
   )
 }

@@ -22,6 +22,17 @@ import NewWarehouse from "./components/NewWarehouse"
 import NewUser from "./components/NewUser"
 import UsersList from "./pages/Admin/UsersList"
 import UpdateUser from "./pages/Admin/UpdateUser"
+import GeneralMain from "./pages/GeneralWarehouse/GeneralMain"
+import GwarehouseList from "./pages/GeneralWarehouse/GwarehouseList"
+import GwarehouseItems from "./pages/GeneralWarehouse/GwarehouseItems"
+import Gitem from "./pages/GeneralWarehouse/Gitem"
+import GrefundDasboard from "./pages/GeneralWarehouse/GrefundDasboard"
+import GrequestsDashboard from "./pages/GeneralWarehouse/GrequestsDashboard"
+import RequestData from "./data/RequestData"
+import RequestTable from "./components/RequestTable"
+import NewRequestTable from "./components/NewRequestTable"
+import NewRefundTable from "./components/NewRefundTable"
+import AddItems from "./pages/GeneralWarehouse/AddItems"
 
 
 function App(){
@@ -30,6 +41,7 @@ function App(){
     const[td ,settd] =useState(TableData)
     const[il,setil]=useState(itemsList)
     const[WHD,setWHD]=useState(WarehousesData)
+    const[Requests,setRequests]=useState(RequestData)
 
    
 
@@ -59,13 +71,13 @@ function App(){
         }></Route>
 
         <Route path="/ExamineMain/RefundsDashboard" element={
-         <> <RefundsDashboard Refund={Data}></RefundsDashboard></>
+         <> <RefundsDashboard Refund={Data} type="GeneralNav"></RefundsDashboard></>
             
 
         }></Route>
 
 
-        <Route path="/ExamineMain/RefundTable/:id" element={
+        <Route path="/RefundTable/:id" element={
          <> <RefundTable tdata={td}></RefundTable></>
         
         }></Route>
@@ -122,6 +134,48 @@ function App(){
         }></Route>
 
         
+
+                                            //this is GeneralWarehouse routes
+
+                              <Route path="/GeneralWarehouse" element={<GeneralMain></GeneralMain>
+
+                              }></Route>
+                              <Route path="/General/WareHouses" element={<GwarehouseList WH={WHD}></GwarehouseList>
+
+                            }></Route>
+
+                            <Route path="/GeneralWareHouses/:id" element={
+                                    
+                            <GwarehouseItems aylist={il}></GwarehouseItems>
+                                }></Route>
+
+                                    <Route path="/Generalitem/:id/:Name" element={
+                                    
+                                        <Gitem></Gitem>
+                                        }></Route>
+
+                            <Route path="/General/refundsDashboard" element={
+                                    
+                                   <GrefundDasboard Refund={Data}></GrefundDasboard>
+
+                                    }></Route>
+
+
+                            <Route path="/General/Requests"  element={<GrequestsDashboard Req={Requests}></GrequestsDashboard>}  ></Route>
+
+                            <Route path="/RequestTable/:id"  element={<RequestTable tdata={td}></RequestTable>}  ></Route>  
+
+                            <Route path="/NewRequestTable"  element={<NewRequestTable></NewRequestTable>}  ></Route> 
+
+                            <Route path="/NewRefundTable"  element={<NewRefundTable></NewRefundTable>}  ></Route>
+
+                            <Route path="/General/additems"  element={<AddItems></AddItems>}  ></Route>   
+                            
+
+
+
+
+
           </Routes>
       </Router>
     
