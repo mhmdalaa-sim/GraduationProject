@@ -12,6 +12,8 @@ function MainControl() {
     <Link to="/Admin"><Button>Admin</Button></Link>
     <Link to="/GeneralWarehouse"><Button>GeneralWarehouse</Button></Link>
 
+    <Link to="/DepartmentWarehouse"><Button>DepartmentWarehouse"</Button></Link>
+
     
 
   </>
