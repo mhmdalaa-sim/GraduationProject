@@ -6,8 +6,23 @@ import {useState} from "react"
 import {useNavigate} from "react-router-dom"
 import AdminService from '../../services/AdminService'
 
-function DeanReqTableTemp({item},{Accepted_Quanitiy}) {
 
+
+function DeanReqTableTemp({item}) {
+
+  const[allowed_quantity,setallowed_quantity]=useState('');
+  const navigate =useNavigate();
+
+  const saveItem=(e)=>{
+    e.preventDefault();
+    const item={allowed_quantity}
+    AdminService.createItem(item).then(response=>{
+      navigate('');
+  }
+  )
+  .catch(error=>{
+     console.log("Something went wrong",error);
+  })}
 
 
     
@@ -22,7 +37,7 @@ function DeanReqTableTemp({item},{Accepted_Quanitiy}) {
     <td class="p-2 col px-1">{item.Name}</td>
     <td class="p-2 col px-1">-</td>
     <td class="p-2 col px-1">{item.Quantity}</td>
-    <td class="p-2 col px-1"><Form.Control type="number" onChange={(e)=>Accepted_Quanitiy=e.target.value} /></td>
+    <td class="p-2 col px-1"><Form.Control type="number" onChange={(e)=>setallowed_quantity(e.target.value)}/></td>
     <td class="p-2 col px-1"></td>
     <td class="p-2 col px-1"></td>
     <td class="p-2 col px-1">{item.Value}</td>
