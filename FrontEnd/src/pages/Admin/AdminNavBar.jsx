@@ -5,15 +5,17 @@ import logo1 from './add (1).png'
 import logo2 from './warehouse.png'
 import logo3 from './add.png'
 import logo4 from './refresh-page-option.png'
+import logo5 from './deletedlogo.png'
+import logo6 from './userlogo.png'
+
 import{Link} from "react-router-dom"
 function AdminNavBar() {
 
     const navbar = {backgroundColor: '#448AE5',
 
     fontFamily: 'Lalezar',
-    fontSize:"1.5rem"
-
-
+    fontSize:"1.4rem",
+    marginRight:"5px"
   };
     const navstyle={
     color:"white",
@@ -21,28 +23,29 @@ function AdminNavBar() {
                     }   
 
                     const dropnavbar = {backgroundColor: '#448AE5',
-                    paddingTop:"3%",
-                    color:"white"
-                    
+                    paddingTop:"1%",
+                    color:"white",
                 
                 };
 
   return (
     <Navbar style={navbar}>
     <Container>
-    <Navbar.Brand ><img src={logo}  /></Navbar.Brand>
+    <Navbar.Brand as={Link} to="/AdminMain"><img src={logo}  /></Navbar.Brand>
     <Nav className="justify-content-end" >
-
     
-
+    
     <NavDropdown title={
 
-<span style={{color:'white'}}>تعديل</span>
+     <span style={{color:'white'}}>قائمة المحذوفات</span>
     } id="nav-dropdown" style={dropnavbar}>
-        <NavDropdown.Item style={dropnavbar} eventKey="4.1"  as={Link} to="/UsersList" >مستخدم</NavDropdown.Item>
-         <NavDropdown.Item style={dropnavbar} eventKey="4.2"  as={Link} to="/WareHouses">مخزن</NavDropdown.Item>
+        <NavDropdown.Item style={dropnavbar} eventKey="4.1"  as={Link} to="/DeletedUsersList" >مستخدم</NavDropdown.Item>
+         <NavDropdown.Item style={dropnavbar} eventKey="4.2"  as={Link} to="/DeletedWareHouses">مخزن</NavDropdown.Item>
+         <NavDropdown.Item style={dropnavbar} eventKey="4.3"  as={Link} to="/DeletedItems">صنف</NavDropdown.Item>
 
-      </NavDropdown> <NavLink><img src={logo4}  /></NavLink>
+      </NavDropdown> <NavLink><img src={logo5}  /></NavLink>
+
+    
     
    <NavDropdown title={ 
 
@@ -56,9 +59,10 @@ function AdminNavBar() {
         
       </NavDropdown> <NavLink><img src={logo3}  /></NavLink>
       
+      <Nav.Link style={navstyle}  as={Link} to="/UsersList" >  المستخدمين  <img src={logo6}  /></Nav.Link>
+
     
-    
-    <Nav.Link style={navstyle}  as={Link} to="/WareHouses" >  المخازن المتاحه <img src={logo2}  /></Nav.Link>
+    <Nav.Link style={navstyle}  as={Link} to="/WareHouses" >  المخازن  <img src={logo2}  /></Nav.Link>
     
    
      

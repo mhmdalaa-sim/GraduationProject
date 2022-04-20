@@ -4,8 +4,8 @@ import ItemsAddDeleteTableRows from '../../components/ItemsAddDeleteTableRows'
 function AddItems() {
 
     const style={
-    
-        padding:"10px",
+
+              padding:"10px",
         fontFamily: 'Lalezar',
     fontSize:"2rem"
     }

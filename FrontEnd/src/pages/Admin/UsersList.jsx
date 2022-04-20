@@ -1,14 +1,26 @@
 import React from 'react'
-import {useState} from "react"
 import UsersData from '../../data/UsersData'
 import AdminNavBar from './AdminNavBar'
 import { Container,Row,Col,Button } from 'react-bootstrap'
+import {useEffect,useState} from "react"
 import{Link} from "react-router-dom"
 import SearchPage from '../../components/SearchPage'
-function UsersList() {
+import AdminService from'../../services/AdminService'
 
-    const[UD,setUD]=useState(UsersData)
+const UsersList= () => {
+  const [roles,setRoles]= useState([])
 
+  useEffect(()=>{
+    AdminService.getAllUsers().then(response =>{
+      setRoles(response.data);
+
+   })
+   .catch(error =>{
+
+      console.log('something went wrong',error);
+
+  })
+  },[])
     const style={
         backgroundColor:"#448AE5",
         color:"white",
@@ -32,15 +44,24 @@ function UsersList() {
         <Col style={{float:"right", marginTop:"5%"}}><SearchPage ></SearchPage></Col>
         </Row>
         </Container>
-       {UD.map((item)=>{
+        {roles.length>0?roles.map((role)=>{
            return <>
            <Container style={style}>
      
       <Row className="justify-content-end">
       <Col >
-    
+      <Button onClick={(e)=>{ e.preventDefault();
+                 AdminService.removeUser(role.user.user_id).then(response=>{
+                   window.location.reload(false);
+                  }).catch(error=>{
+                    console.log("something went wrong",error);
+                  })} 
+                }style={{float:'left',color:'white', borderRadius: "10px",
+        borderStyle:"solid",
+        borderColor: "#15509D"
+        }}>مسح</Button>
       
-      <Link to={`/UpdateUser`}><Button style={{float:'left',color:'white', borderRadius: "10px",
+      <Link to={`/User/${role.role_id}`}><Button style={{float:'left',color:'white', borderRadius: "10px",
         borderStyle:"solid",
         borderColor: "#15509D"
         }}>تعديل </Button></Link>
@@ -48,22 +69,28 @@ function UsersList() {
         </Col>
 
         <Col sm m lg="auto" style={{float:'right'}}>
-          <h5 > {item.date}: تاريخ الادخال </h5>
+          <h5 > تاريخ الانضمام : {role.date_of_assign} </h5>
         </Col>
 
         <Col sm m lg="auto" style={{float:'right'}}>
-          <h5 > {item.role}: الدور </h5>
+          <h5 > المرتب : {role.salary} </h5>
         </Col>
 
         <Col sm m lg="auto" style={{float:'right'}}>
-          <h5 >{item.name} : اسم المستخدم </h5>
+          <h5 > القسم  : {role.warehouse.warehouse_name} </h5>
         </Col>
 
         <Col sm m lg="auto" style={{float:'right'}}>
-          <h5 >- {item.id}</h5>
+          <h5 > الدور : {role.role} </h5>
         </Col>
         
+        <Col sm m lg="auto" style={{float:'right'}}>
+          <h5 > اسم المستخدم : {role.user.username} </h5>
+        </Col>
 
+        <Col sm m lg="auto" style={{float:'right'}}>
+          <h5 >  {role.id} </h5>
+        </Col>
         
         
       </Row>
@@ -74,7 +101,7 @@ function UsersList() {
 
            </>
            
-       })}
+       }):<h1>لا يوجد مستخدمين متاحة</h1>}
    </>
   )
 }

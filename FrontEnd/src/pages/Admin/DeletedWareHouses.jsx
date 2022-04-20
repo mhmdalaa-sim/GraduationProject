@@ -1,5 +1,5 @@
 import React from 'react'
-import WareHouse from '../../components/WareHouse'
+import DeletedWarehouse from '../../components/DeletedWarehouse'
 import AdminNavBar from './AdminNavBar'
 import{Link} from "react-router-dom"
 import { Container,Row,Col,Button,FormGroup,FormLabel,FormControl } from 'react-bootstrap'
@@ -8,10 +8,10 @@ import { useEffect, useState } from "react";
 import AdminService from'../../services/AdminService'
 
 
-const WareHousesDashboard = () => {
+const DeletedWareHouses = () => {
   const [warehouses,setWarehouses]= useState([])
   useEffect(()=>{
-    AdminService.getAllWarehouses().then(response =>{
+    AdminService.getDeletedWarehouses().then(response =>{
     setWarehouses(response.data);
    })
    .catch(error =>{
@@ -24,23 +24,21 @@ const WareHousesDashboard = () => {
        <AdminNavBar></AdminNavBar>
 
        <h1 style={{textAlign:"center",marginTop:"5%",   fontFamily: 'Lalezar',
-    fontSize:"4rem"}}>المخازن المتاحه</h1>
+    fontSize:"4rem"}}>المخازن المحذوفة</h1>
 
        <Container> 
         <Row>
-        <Col style={{float:"right", marginTop:"6%",marginLeft:"30%"}}><SearchPage ></SearchPage></Col>
+        <Col style={{float:"right", marginTop:"6%"}}><SearchPage ></SearchPage></Col>
         </Row>
         </Container>
 
-        {warehouses.length>0?warehouses.map((warehouse)=>{
-        return <WareHouse key={warehouse.warehouse_id} warehouse={warehouse}></WareHouse>
-       }):<h1 style={{textAlign:"center" ,marginTop:"3%", fontFamily: 'Lalezar',
-       fontSize:"4rem"}}>لا توجد مخازن متاحة</h1>} 
-
-       
+       {warehouses.length>0?warehouses.map((warehouse)=>{
+        return <DeletedWarehouse key={warehouse.warehouse_id} warehouse={warehouse}></DeletedWarehouse>
+       }):<h1  style={{textAlign:"center" ,marginTop:"3%", fontFamily: 'Lalezar',
+       fontSize:"4rem"}}>لا توجد مخازن تمت ازالتها</h1>} 
   </>
   
   )
 }
 
-export default WareHousesDashboard
+export default DeletedWareHouses

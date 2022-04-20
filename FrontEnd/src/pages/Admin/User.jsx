@@ -6,9 +6,9 @@ import logo4 from "./accept.svg"
 import AdminService from'../../services/AdminService'
 import {useEffect,useState} from "react"
 
-function Item() {
+function User() {
   const {id} = useParams()
-  const [item,setItem] = useState('');
+  const [role,setRole] = useState('');
   const [ifUpdate,setIfUpdate]=useState(false);
   const [ifshow,setIfShow]=useState(false);
   const [editType,setEditType]=useState('');
@@ -28,9 +28,10 @@ function Item() {
     marginTop:"5%"
   }
   useEffect(()=>{
-      AdminService.getItem(id).then(response=>{
-      setItem(response.data);})
-      AdminService.getEditHistory(id,'item').then(response=>{
+      AdminService.getUser(id).then(response=>{
+        setRole(response.data);})
+        console.log(id)
+      AdminService.getEditHistory(id,'user').then(response=>{
         setEditHistory(response.data);
    })
    
@@ -54,7 +55,6 @@ AdminService.updateItem(holder).then(response=>
     })
 }
   return (<>
- 
   <Container fluid="md">
   <Row style={rowstyle}>
     <Col fluid>
@@ -62,20 +62,20 @@ AdminService.updateItem(holder).then(response=>
     </Col>
     <Col style={{textAlign:'center'}}>
     <Row fluid>
-    <Col> <Form.Label ><h3>الوحده</h3></Form.Label>
-    <h4>          {item.unit}      </h4>
+    <Col> <Form.Label ><h3>الدور</h3></Form.Label>
+    <h4>          {role.role}     </h4>
     </Col>
  
-    <Col> <Form.Label ><h3>اسم الصنف</h3></Form.Label>
-    <h4>{item.item_name}</h4>
+    <Col> <Form.Label ><h3> الرقم القومي </h3></Form.Label>
+    <h4>{role.user.national_num}</h4>
+
+    <Col> <Form.Label ><h3> اسم المستخدم بالكامل</h3></Form.Label>
+    <h4>{role.user.fullname}</h4>
 
     </Col>
-    <Col> <Form.Label ><h3> الفئة</h3></Form.Label>
-    <h4>{item.category}</h4>
-
     </Col>
-    <Col> <Form.Label ><h3> رقم الصنف</h3></Form.Label>
-    <h4>{item.item_id}</h4>
+    <Col> <Form.Label ><h3> رقم المستخدم</h3></Form.Label>
+    <h4>{role.user.user_id}</h4>
 
     </Col>
 
@@ -87,9 +87,22 @@ AdminService.updateItem(holder).then(response=>
   </Row>
   <Row style={rowstyle}>
 
-  <Col > <Form.Label  style={{marginLeft:"90%"}}>  <h3> الوصف</h3></Form.Label>
-    <h4 style={{marginLeft:"70%"}}>{item.description}</h4>
- </Col> 
+  <Col> <Form.Label ><h3> اسم المستخدم </h3></Form.Label>
+    <h4>{role.user.username}</h4>
+    </Col>
+
+    <Col> <Form.Label ><h3>رقم هاتف المستخدم</h3></Form.Label>
+    <h4>{role.user.phoneNumber}</h4>
+
+    </Col>
+    <Col> <Form.Label ><h3> عنوان المستخدم</h3></Form.Label>
+    <h4>{role.user.address}</h4>
+
+    </Col>
+    <Col> <Form.Label ><h3> تاريخ الميلاد </h3></Form.Label>
+    <h4>{role.user.birthday}</h4>
+
+    </Col>
  
  {(ifshow)?
           history.length>0?[(
@@ -150,12 +163,12 @@ AdminService.updateItem(holder).then(response=>
    >
    <option>........</option>
 
-  <option value="اسم الصنف" >اسم الصنف</option>
-  <option value="الوحدة">الوحدة </option>
-  <option value="الفئة">  الفئة </option>
-  <option value="الوصف">  الوصف </option>
-
-
+  <option value="اسم المستخدم" >اسم المستخدم</option>
+  <option value="اسم المستخدم الكامل">"اسم المستخدم الكامل </option>
+  <option value="العنوان">  العنوان </option>
+  <option value="رقم الهاتف">  رقم الهاتف </option>
+  <option value="الرقم القومي">  الرقم القومي </option>
+  <option value="تاريخ الميلاد">  تاريخ الميلاد </option>
 
      </Form.Select>
 
@@ -199,4 +212,4 @@ AdminService.updateItem(holder).then(response=>
   )
 }
 
-export default Item
+export default User

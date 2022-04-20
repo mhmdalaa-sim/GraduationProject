@@ -25,7 +25,7 @@ color:"white"
 <Nav.Link style={navstyle}  as={Link} to="/General/additems"  > تسجيل الاصناف <img src={logo4}  /></Nav.Link>
 <Nav.Link style={navstyle}  as={Link} to="/General/refundsDashboard"  > طلبات الارتجاع <img src={logo3}  /></Nav.Link>
  <Nav.Link style={navstyle}  as={Link} to="/General/Requests"  > استمارات الصرف <img src={logo2}  /></Nav.Link>
- <Nav.Link style={navstyle}  as={Link} to="/General/WareHouses"   > المخازن <img src={logo1}  /></Nav.Link>
+ <Nav.Link style={navstyle}  as={Link} to="/General/WareHousesItems"   > الاصناف المتاحه  <img src={logo1}  /></Nav.Link>
  
 </Nav>
 </Container>
