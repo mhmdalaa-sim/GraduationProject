@@ -16,11 +16,10 @@ function ItemsTableRows({rowsData, deleteTableRows, handleChange}) {
                <input type="text" value={status} onChange={(evnt)=>(handleChange(index, evnt))} name="status" className="form-control"/>
                 </td>
                 <td><input type="number" value={Existingfrominventory}  onChange={(evnt)=>(handleChange(index, evnt))} name="Existingfrominventory" className="form-control" /> </td>
-                
                 <td><input type="number" value={stock}  onChange={(evnt)=>(handleChange(index, evnt))} name="stock" className="form-control" /> </td>
                 <td><input type="number" value={increment}  onChange={(evnt)=>(handleChange(index, evnt))} name="increment" className="form-control" /> </td>
                 <td><input type="number" value={shortage}  onChange={(evnt)=>(handleChange(index, evnt))} name="shortage" className="form-control" /> </td>
-    <td><input type="number" value={quantity}  onChange={(evnt)=>(handleChange(index, evnt))} name="quantity" className="form-control" /> </td>
+                <td><input type="number" value={quantity}  onChange={(evnt)=>(handleChange(index, evnt))} name="quantity" className="form-control" /> </td>
                 <td><input type="number" value={value}  onChange={(evnt)=>(handleChange(index, evnt))} name="value" className="form-control" /> </td>
                 <td><input type="text" value={unit}  onChange={(evnt)=>(handleChange(index, evnt))} name="unit" className="form-control" /> </td>
                 <td><input type="text" value={name}  onChange={(evnt)=>(handleChange(index, evnt))} name="name" className="form-control" /> </td>

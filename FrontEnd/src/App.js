@@ -9,6 +9,7 @@ import TestData from "./data/TestData"
 import TableTemp from "./components/TableTemp"
 import TableData from "./data/TableData"
 import WarehousesData from "./data/WarehousesData"
+import TransactionData from "./data/TransactionData"
 import RefundTable from "./pages/Examination Comitee/RefundTable"
 import Item from "./pages/Examination Comitee/Item"
 import MainControl from "./pages/Examination Comitee/MainControl"
@@ -20,6 +21,7 @@ import NewItem from "./components/NewItem"
 import WHItems from "./pages/Admin/WHItems"
 import NewWarehouse from "./components/NewWarehouse"
 import NewUser from "./components/NewUser"
+import AdminMain from "./pages/Admin/AdminMain"
 import UsersList from "./pages/Admin/UsersList"
 import UpdateUser from "./pages/Admin/UpdateUser"
 import GeneralMain from "./pages/GeneralWarehouse/GeneralMain"
@@ -33,10 +35,32 @@ import RequestTable from "./components/RequestTable"
 import NewRequestTable from "./components/NewRequestTable"
 import NewRefundTable from "./components/NewRefundTable"
 import AddItems from "./pages/GeneralWarehouse/AddItems"
+import DeletedItems from "./pages/Admin/Deleteditems"
+import DeletedWareHouses from "./pages/Admin/DeletedWareHouses" 
+import DeletedUsersList from "./pages/Admin/DeletedUsersList"
+import User from "./pages/Admin/User"
+import DepartmentMain from "./pages/DepartmantWarehouse/DepartmentMain"
+import DepratmentItems from "./pages/DepartmantWarehouse/DepratmentItems"
+import DepartmentItem from "./pages/DepartmantWarehouse/DepartmentItem"
+import DrefundDashboard from "./pages/DepartmantWarehouse/DrefundDashboard"
+import DrequestDashboard from "./pages/DepartmantWarehouse/DrequestDashboard"
+import DAddItems from "./pages/DepartmantWarehouse/DAddItems"
+import DeanMain from "./pages/Dean/DeanMain"
+import DeanRequestsDashboard from "./pages/Dean/DeanRequestsDashboard"
+import DeanRequestTable from "./pages/Dean/DeanRequestTable"
+import DeanDepriveDashboard from "./pages/Dean/DeanDepriveDashboard"
+import DeanDepriveTable from "./pages/Dean/DeanDepriveTable"
+import DeanWarehouses from "./pages/Dean/DeanWarehouses"
+import DeanWarehouseItems from "./pages/Dean/DeanWarehouseItems"
+import DeanRefundsDashboard from "./pages/Dean/DeanRefundsDashboard"
+import TransactionsDashboard from "./pages/Dean/TransactionsDashboard"
 
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 
 function App(){
-    
+    const[TranData,setTranData]=useState(TransactionData)
     const[Data ,setData] =useState(TestData)
     const[td ,settd] =useState(TableData)
     const[il,setil]=useState(itemsList)
@@ -81,7 +105,7 @@ function App(){
          <> <RefundTable tdata={td}></RefundTable></>
         
         }></Route>
-        <Route path="/ExamineMain/item/:id/:name" element={
+        <Route path="/ExamineMain/item/:id" element={
          <> <Item></Item> </>
             
         }></Route>
@@ -89,6 +113,11 @@ function App(){
         
                                                         //this is Admin routes
              
+
+        <Route path="/AdminMain" element={
+         <> <AdminMain></AdminMain> </>
+            
+        }></Route>
         <Route path="/Admin" element={
          <> <AdminNavBar></AdminNavBar> </>
             
@@ -102,7 +131,9 @@ function App(){
 
             <NewItem></NewItem>
         }></Route>
-
+         <Route path="/DeletedItems" element={
+            <DeletedItems aylist={il}></DeletedItems>
+        }></Route>
         <Route path="/WareHouses" element={
 
             <WareHousesDashboard WH={WHD}></WareHousesDashboard>
@@ -118,7 +149,10 @@ function App(){
         
             <NewWarehouse></NewWarehouse>
         }></Route>
+       <Route path="/DeletedWareHouses" element={
 
+      <DeletedWareHouses WH={WHD}></DeletedWareHouses>
+        }></Route>
 
         <Route path="/NewUser" element={
         
@@ -128,11 +162,16 @@ function App(){
         <Route path="/UsersList" element={
             <UsersList></UsersList>
         }></Route>
-
+       <Route path="/User/:id" element={
+            <User></User>
+        }></Route>
         <Route path="/UpdateUser" element={
             <UpdateUser></UpdateUser>
         }></Route>
+          <Route path="/DeletedUsersList" element={
 
+        <DeletedUsersList ></DeletedUsersList>
+      }></Route>
         
 
                                             //this is GeneralWarehouse routes
@@ -140,14 +179,11 @@ function App(){
                               <Route path="/GeneralWarehouse" element={<GeneralMain></GeneralMain>
 
                               }></Route>
-                              <Route path="/General/WareHouses" element={<GwarehouseList WH={WHD}></GwarehouseList>
+                              <Route path="/General/WareHousesItems" element={ <GwarehouseItems aylist={il}></GwarehouseItems>
 
                             }></Route>
 
-                            <Route path="/GeneralWareHouses/:id" element={
-                                    
-                            <GwarehouseItems aylist={il}></GwarehouseItems>
-                                }></Route>
+                           
 
                                     <Route path="/Generalitem/:id/:Name" element={
                                     
@@ -172,6 +208,49 @@ function App(){
                             <Route path="/General/additems"  element={<AddItems></AddItems>}  ></Route>   
                             
 
+
+
+
+                            <Route path="/DepartmentWarehouse" element={<DepartmentMain></DepartmentMain>
+
+}></Route>
+
+<Route path="/Department/Items" element={
+
+<DepratmentItems aylist={il} ></DepratmentItems>
+    }></Route>
+
+<Route path="/Departmentitem/:id/:Name" element={<DepartmentItem></DepartmentItem>
+                                    
+                                    
+                                    }></Route>
+
+<Route path="/Department/refundsDashboard" element={
+                                    
+                                    <DrefundDashboard Refund={Data}></DrefundDashboard>
+
+                                    }></Route>
+
+<Route path="/Department/Requests"  element={<DrequestDashboard Req={Requests}></DrequestDashboard>}  ></Route>
+<Route path="/Department/additems"  element={<DAddItems></DAddItems>}  ></Route> 
+
+
+
+
+                                                //this is Dean routes
+
+        <Route path="/Dean" element={<DeanMain></DeanMain>}>
+
+        </Route>   
+
+        <Route  path="/Dean/Requests"  element={<DeanRequestsDashboard Req={Requests}></DeanRequestsDashboard>}   ></Route> 
+        <Route path="/DeanRequestTable/:id"  element={<DeanRequestTable tdata={td}></DeanRequestTable>}  ></Route>  
+        <Route  path="/Dean/Deprives"  element={<DeanDepriveDashboard Req={Requests}></DeanDepriveDashboard>}   ></Route>
+        <Route path="/DeanDepriveTable/:id"  element={<DeanDepriveTable tdata={td} ></DeanDepriveTable>}  ></Route>  
+        <Route path="/Dean/Warehouses"  element={<DeanWarehouses WH={WHD}></DeanWarehouses>}  ></Route>   
+        <Route path="/DeanWareHouses/:id"  element={<DeanWarehouseItems aylist={il} ></DeanWarehouseItems>}  ></Route>     
+        <Route  path="/Dean/Refunds"  element={<DeanRefundsDashboard Refund={Data}></DeanRefundsDashboard>}   ></Route>    
+        <Route path="/Dean/Transactions" element={<TransactionsDashboard Transaction={TranData}></TransactionsDashboard>}></Route>          
 
 
 
