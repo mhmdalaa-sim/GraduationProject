@@ -1,6 +1,6 @@
 import React from 'react'
 import {useEffect,useState} from "react"
-import AdminNavBar from './AdminNavBar'
+import AdminSideNav from './AdminSideNav'
 import { Container,Row,Col,Button } from 'react-bootstrap'
 import {Link} from "react-router-dom"
 import SearchPage from '../../components/SearchPage'
@@ -34,7 +34,7 @@ fontSize:"2rem",
 }
   return (
    <>
-   <AdminNavBar></AdminNavBar>
+  <AdminSideNav></AdminSideNav>
    <Container> 
         <Row>
         <Col style={{float:"right", marginTop:"5%"}}><SearchPage ></SearchPage></Col>

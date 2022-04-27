@@ -1,6 +1,6 @@
 import React from 'react'
 import {useParams} from "react-router-dom"
-import AdminNavBar from './AdminNavBar'
+import AdminSideNav from './AdminSideNav'
 import ItemRow from '../../components/ItemRow'
 import { Container,Row,Col,Button,Form,FormLabel,FormControl } from 'react-bootstrap'
 import SearchPage from '../../components/SearchPage'
@@ -55,7 +55,7 @@ const WHItems=()=> {
     }
   return (
 <>
-<AdminNavBar></AdminNavBar>
+<AdminSideNav></AdminSideNav>
 <h1 style={{textAlign:"center", paddingTop:"5%"}}>{} اصناف المخزن رقم   </h1>
 
 

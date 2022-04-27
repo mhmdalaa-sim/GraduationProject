@@ -1,6 +1,6 @@
 import React from 'react'
 import ItemRow from '../../components/ItemRow'
-import AdminNavBar from './AdminNavBar'
+import AdminSideNav from './AdminSideNav'
 import{Link} from "react-router-dom"
 import { Container,Row,Col,Button,FormGroup,FormLabel,FormControl } from 'react-bootstrap'
 import SearchPage from '../../components/SearchPage'
@@ -22,7 +22,7 @@ const LIstOfItems = () => {
   },[])  
   return (
     <>
-        <AdminNavBar></AdminNavBar>
+       <AdminSideNav></AdminSideNav>
 
         <h1 style={{textAlign:"center" ,marginTop:"3%", fontFamily: 'Lalezar',
     fontSize:"4rem"}}>الاصناف الموجوده</h1>

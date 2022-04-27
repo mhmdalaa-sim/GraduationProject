@@ -18,7 +18,8 @@ function AdminNavBar() {
     marginRight:"5px"
   };
     const navstyle={
-    color:"white",
+    color:"white",fontFamily: 'Lalezar',
+    fontSize:"1.4rem",
     
                     }   
 

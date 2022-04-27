@@ -1,6 +1,6 @@
 import React from 'react'
 import WareHouse from '../../components/WareHouse'
-import AdminNavBar from './AdminNavBar'
+import AdminSideNav from './AdminSideNav'
 import{Link} from "react-router-dom"
 import { Container,Row,Col,Button,FormGroup,FormLabel,FormControl } from 'react-bootstrap'
 import SearchPage from '../../components/SearchPage'
@@ -21,7 +21,7 @@ const WareHousesDashboard = () => {
   })
   },[])
   return (<>
-       <AdminNavBar></AdminNavBar>
+       <AdminSideNav></AdminSideNav>
 
        <h1 style={{textAlign:"center",marginTop:"5%",   fontFamily: 'Lalezar',
     fontSize:"4rem"}}>المخازن المتاحه</h1>

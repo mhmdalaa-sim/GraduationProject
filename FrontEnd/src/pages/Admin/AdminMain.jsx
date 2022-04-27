@@ -1,12 +1,16 @@
 import React from 'react'
 import { Container ,Row,Col,Card, } from 'react-bootstrap'
-import AdminNavBar from './AdminNavBar'
+import AdminSideNav from './AdminSideNav'
 import Logo1 from "./Union 1.svg"
+import Logo2 from "./warehouse.png"
+import Logo3 from "./add (1).png"
+import LineChart from '../../components/LineChart'
+import RankingTable from './RankingTable'
 
 function AdminMain() {
   return (
   <>
-      <AdminNavBar></AdminNavBar>
+     <AdminSideNav></AdminSideNav>
 
       <Container>
 
@@ -51,11 +55,11 @@ function AdminMain() {
 
                         <Row>
                         <h1 style={{textAlign:"center" , fontFamily: 'Lalezar',
-                        fontSize:"2rem",paddingBottom:"9%"}}> عدد المستخدمين </h1>
+                        fontSize:"2rem",paddingBottom:"9%"}}> عدد المخازن </h1>
                                 
                         </Row>
 
-                    <Row> <Col><img src={Logo1} style={{width:"60%"}}></img></Col> 
+                    <Row> <Col><img src={Logo2} style={{width:"60%"}}></img></Col> 
 
                     <Col><h2 style={{textAlign:"center" , fontFamily: 'Lalezar',
                         fontSize:"4.5rem",paddingBottom:"0%"}}> 7  </h2></Col> 
@@ -78,11 +82,11 @@ function AdminMain() {
 
                         <Row>
                         <h1 style={{textAlign:"center" , fontFamily: 'Lalezar',
-                        fontSize:"2rem",paddingBottom:"9%"}}> عدد المخازن </h1>
+                        fontSize:"2rem",paddingBottom:"9%"}}> عدد الاصناف </h1>
                                 
                         </Row>
 
-                    <Row> <Col><img src={Logo1} style={{width:"60%"}}></img></Col> 
+                    <Row> <Col><img src={Logo3} style={{width:"60%"}}></img></Col> 
 
                     <Col><h2 style={{textAlign:"center" , fontFamily: 'Lalezar',
                         fontSize:"4.5rem",paddingBottom:"0%"}}> 7  </h2></Col> 
@@ -100,7 +104,28 @@ function AdminMain() {
 
 
           <hr style={{borderRadius:"200%",borderStyle:"solid",height:"2px"}}></hr>
+
+          <LineChart></LineChart>
+
+
+          <hr style={{borderRadius:"200%",borderStyle:"solid",height:"2px"}}></hr>
+
+
+          <h1 style={{textAlign:"center",marginTop:"5%",   fontFamily: 'Lalezar',
+    fontSize:"4rem"}}> اكتر المستخدمين نشاطا </h1>
+
+          <RankingTable></RankingTable>
+
+          
       </Container>
+
+ 
+
+
+
+
+
+
   </>
   )
 }

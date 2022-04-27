@@ -1,6 +1,6 @@
 import React from 'react'
 import UsersData from '../../data/UsersData'
-import AdminNavBar from './AdminNavBar'
+import AdminSideNav from './AdminSideNav'
 import { Container,Row,Col,Button } from 'react-bootstrap'
 import {useEffect,useState} from "react"
 import{Link} from "react-router-dom"
@@ -37,7 +37,7 @@ const UsersList= () => {
     }
   return (
    <>
-   <AdminNavBar></AdminNavBar>
+  <AdminSideNav></AdminSideNav>
      
    <Container> 
         <Row>

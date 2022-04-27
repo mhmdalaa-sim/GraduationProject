@@ -1,6 +1,6 @@
 import React from 'react'
 import DeletedItem from '../../components/DeletedItem'
-import AdminNavBar from './AdminNavBar'
+import AdminSideNav from './AdminSideNav';
 import{Link} from "react-router-dom"
 import { useEffect, useState } from "react";
 import Moment from "react-moment";
@@ -23,7 +23,7 @@ const Deleteditems = () => {
 
   return (
     <>
-        <AdminNavBar></AdminNavBar>
+       <AdminSideNav></AdminSideNav>
 
          <h1 style={{textAlign:"center" ,marginTop:"3%", fontFamily: 'Lalezar',
     fontSize:"4rem"}}>الاصناف المحذوفة</h1>
