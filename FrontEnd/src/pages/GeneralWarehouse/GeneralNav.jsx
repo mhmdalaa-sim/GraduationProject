@@ -22,10 +22,10 @@ color:"white"
 <Container>
 <Navbar.Brand ><img src={logo}  /></Navbar.Brand>
 <Nav className="justify-content-end" >
-<Nav.Link style={navstyle}  as={Link} to="/General/additems"  > تسجيل الاصناف <img src={logo4}  /></Nav.Link>
-<Nav.Link style={navstyle}  as={Link} to="/General/refundsDashboard"  > طلبات الارتجاع <img src={logo3}  /></Nav.Link>
- <Nav.Link style={navstyle}  as={Link} to="/General/Requests"  > استمارات الصرف <img src={logo2}  /></Nav.Link>
- <Nav.Link style={navstyle}  as={Link} to="/General/WareHousesItems"   > الاصناف المتاحه  <img src={logo1}  /></Nav.Link>
+<Nav.Link style={{color:"white",paddingTop:"25px"}}  as={Link} to="/General/additems"  > تسجيل الاصناف <img style={{width:"25%"}} src={logo4}  /></Nav.Link>
+<Nav.Link style={{color:"white",paddingTop:"23px"}}  as={Link} to="/General/refundsDashboard"  > طلبات الارتجاع <img style={{width:"30%",paddingBottom:"2px"}} src={logo3}  /></Nav.Link>
+ <Nav.Link style={{color:"white",paddingTop:"30px"}}  as={Link} to="/General/Requests"  > استمارات الصرف <img style={{width:"25%"}} src={logo2}  /></Nav.Link>
+ <Nav.Link style={{color:"white",paddingTop:"27px"}}  as={Link} to="/General/WareHousesItems"   > الاصناف المتاحه  <img style={{width:"25%"}} src={logo1}  /></Nav.Link>
  
 </Nav>
 </Container>
